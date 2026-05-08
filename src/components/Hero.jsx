@@ -1,10 +1,24 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaEnvelope, FaArrowDown } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaArrowDown, FaInstagram } from 'react-icons/fa';
+import profilePic from '../assets/profile.png';
 
 const Hero = () => {
+  const name = "Diego de Guzman";
+
   return (
     <section id="home" className="min-h-screen flex flex-col justify-center items-center relative px-6 overflow-hidden bg-slate-950 text-white">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0 flex justify-center items-center opacity-50">
+        <img 
+          src={profilePic} 
+          alt="Diego" 
+          className="w-full h-full object-cover object-top md:object-center filter brightness-[0.6]" 
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-transparent to-slate-950/20"></div>
+      </div>
+
       {/* Background gradients */}
       <div className="absolute top-[-10%] left-[-10%] w-96 h-96 bg-brand-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-50 animate-blob"></div>
       <div className="absolute top-[20%] right-[-10%] w-96 h-96 bg-purple-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-50 animate-blob animation-delay-2000"></div>
@@ -16,8 +30,20 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
-            Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-purple-400">Diego De Guzman</span>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight mb-8 flex flex-col justify-center items-center gap-4 drop-shadow-2xl text-center leading-tight">
+            <span>Hello World, I am</span>
+            <span className="text-cyan-400 flex justify-center flex-wrap">
+              {name.split('').map((char, index) => (
+                <motion.span
+                  key={index}
+                  initial={{ opacity: 0, display: 'none' }}
+                  animate={{ opacity: 1, display: 'inline-block' }}
+                  transition={{ duration: 0.05, delay: 0.5 + index * 0.1 }}
+                >
+                  {char === ' ' ? '\u00A0' : char}
+                </motion.span>
+              ))}
+            </span>
           </h1>
         </motion.div>
 
@@ -32,38 +58,46 @@ const Hero = () => {
           </p>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className="flex gap-6 justify-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <a 
-            href="https://www.linkedin.com/in/deguzmand/" 
-            target="_blank" 
+          <a
+            href="https://www.linkedin.com/in/deguzmand/"
+            target="_blank"
             rel="noopener noreferrer"
             className="p-4 rounded-full bg-white/5 hover:bg-brand-600/20 hover:text-brand-400 transition-all duration-300 border border-white/10 hover:border-brand-500/50 backdrop-blur-sm group"
           >
             <FaLinkedin size={28} className="group-hover:scale-110 transition-transform" />
           </a>
-          <a 
-            href="https://github.com/deguzmand" 
-            target="_blank" 
+          <a
+            href="https://github.com/Spartan5220"
+            target="_blank"
             rel="noopener noreferrer"
             className="p-4 rounded-full bg-white/5 hover:bg-purple-600/20 hover:text-purple-400 transition-all duration-300 border border-white/10 hover:border-purple-500/50 backdrop-blur-sm group"
           >
             <FaGithub size={28} className="group-hover:scale-110 transition-transform" />
           </a>
-          <a 
-            href="mailto:deguzmand@example.com" 
+          <a
+            href="mailto:diegodeguzman5220@gmail.com"
             className="p-4 rounded-full bg-white/5 hover:bg-pink-600/20 hover:text-pink-400 transition-all duration-300 border border-white/10 hover:border-pink-500/50 backdrop-blur-sm group"
           >
             <FaEnvelope size={28} className="group-hover:scale-110 transition-transform" />
           </a>
+          <a
+            href="https://instagram.com/diego.deguzzy"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-4 rounded-full bg-white/5 hover:bg-orange-600/20 hover:text-orange-400 transition-all duration-300 border border-white/10 hover:border-orange-500/50 backdrop-blur-sm group"
+          >
+            <FaInstagram size={28} className="group-hover:scale-110 transition-transform" />
+          </a>
         </motion.div>
       </div>
 
-      <motion.div 
+      <motion.div
         className="absolute bottom-10 left-1/2 -translate-x-1/2"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, y: [0, 10, 0] }}
