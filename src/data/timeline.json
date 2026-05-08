@@ -1,0 +1,66 @@
+[
+  {
+    "id": "jr-capital",
+    "title": "Software Engineer Intern",
+    "company": "JR Capital",
+    "period": "Sep 2025 - Present",
+    "description": "Fullstack development role. Focused on UI/UX improvements, building responsive React components, and connecting frontend pages to the backend API. Built a secure SMS automation backend using OpenAI API to categorize lead responses, implementing sanitization to ensure data privacy.",
+    "icon": "code"
+  },
+  {
+    "id": "asu-capstone",
+    "title": "Frontend Developer (Capstone)",
+    "company": "Arizona State University",
+    "period": "Aug 2025 - Apr 2026",
+    "description": "Led frontend architecture and implementation for the senior capstone project. Designed and developed the user interface, strictly focusing on frontend development with no backend implementation, ensuring a seamless user experience and adherence to frontend best practices.",
+    "icon": "university"
+  },
+  {
+    "id": "jitai-thesis",
+    "title": "JITAI Dashboard Developer (Honors Thesis)",
+    "company": "Barrett Honors College",
+    "period": "Aug 2025 - Apr 2026",
+    "description": "Developed a comprehensive dashboard for Just-In-Time Adaptive Interventions (JITAI). Focused on data visualization and user-friendly interfaces for behavioral data tracking.",
+    "icon": "chart"
+  },
+  {
+    "id": "unilab",
+    "title": "Software Development Intern",
+    "company": "Unilab, Inc.",
+    "period": "Jun 2025 - Jul 2025",
+    "description": "Upgraded the AI finance assistant interface. Engineered semantic search with OpenAI embeddings and PGVector (PostgreSQL) to improve chatbot interactions.",
+    "icon": "code"
+  },
+  {
+    "id": "ca-asu",
+    "title": "Community Assistant",
+    "company": "Arizona State University",
+    "period": "Feb 2024 - May 2025",
+    "description": "Provided direct assistance and support to over 80 residents with questions and concerns. Facilitated communication between management and residents to maintain harmony within the community.",
+    "icon": "university"
+  },
+  {
+    "id": "ta-asu",
+    "title": "Digital Design Teaching Assistant",
+    "company": "Arizona State University",
+    "period": "Jan 2024 - May 2025",
+    "description": "Guided over 40 students weekly in building circuits and understanding digital design fundamentals, improving their technical skills and problem-solving abilities.",
+    "icon": "university"
+  },
+  {
+    "id": "nike",
+    "title": "Retail Sales Associate",
+    "company": "Nike",
+    "period": "Jul 2022 - Aug 2023",
+    "description": "Utilized customer service skills and sales techniques, as well as product knowledge to connect customers with the right products.",
+    "icon": "chart"
+  },
+  {
+    "id": "burger-king",
+    "title": "Fast Food Team Member",
+    "company": "Burger King",
+    "period": "Jul 2021 - Apr 2022",
+    "description": "Meeting and greeting customers, taking food and drink orders and preparing them, answering questions about the menu, policy and services while providing excellent customer service.",
+    "icon": "burger"
+  }
+]

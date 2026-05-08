@@ -1,0 +1,46 @@
+[
+  {
+    "id": "japan",
+    "location": "Japan",
+    "coordinates": [35.6762, 139.6503],
+    "timeline": "March 8-15, 2026",
+    "details": "Locations: Tokyo, Nagoya, Akihabara.",
+    "images": [
+      "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=crop&q=80&w=800"
+    ]
+  },
+  {
+    "id": "spain",
+    "location": "Spain",
+    "coordinates": [42.8806, -8.5456],
+    "timeline": "Summer 2024",
+    "details": "Target: Camino de Santiago (Sarria to Santiago de Compostela). Distance: ~115 km.",
+    "images": [
+      "https://images.unsplash.com/photo-1539037116277-4db2020280eb?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1543781596-f00ff2fcbbde?auto=format&fit=crop&q=80&w=800"
+    ]
+  },
+  {
+    "id": "italy",
+    "location": "Italy",
+    "coordinates": [41.9028, 12.4964],
+    "timeline": "Summer 2023",
+    "details": "Locations: Rome, Florence.",
+    "images": [
+      "https://images.unsplash.com/photo-1515542622106-78b28af7815c?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1543429776-2782fc8e1acd?auto=format&fit=crop&q=80&w=800"
+    ]
+  },
+  {
+    "id": "south-korea",
+    "location": "South Korea",
+    "coordinates": [37.5665, 126.9780],
+    "timeline": "Summer 2022",
+    "details": "Location: Seoul.",
+    "images": [
+      "https://images.unsplash.com/photo-1538485399081-7191377e8241?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1517154421773-0529f29ea451?auto=format&fit=crop&q=80&w=800"
+    ]
+  }
+]
