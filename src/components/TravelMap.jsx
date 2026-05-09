@@ -5,6 +5,7 @@ import L from 'leaflet';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaPlay, FaTimes, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import travelData from '../data/travel.json';
+import { useTheme } from '../context/ThemeContext';
 
 // Fix Leaflet's default icon path issues
 delete L.Icon.Default.prototype._getIconUrl;
@@ -78,7 +79,7 @@ const CarouselModal = ({ location, onClose }) => {
         exit={{ opacity: 0 }}
         className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
       >
-        <div className="bg-white rounded-2xl overflow-hidden max-w-4xl w-full relative">
+        <div className="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden max-w-4xl w-full relative border border-slate-200 dark:border-slate-800">
           <button onClick={onClose} className="absolute top-4 right-4 z-10 p-2 bg-black/50 text-white rounded-full hover:bg-black/70 transition">
             <FaTimes size={24} />
           </button>
@@ -98,10 +99,10 @@ const CarouselModal = ({ location, onClose }) => {
             </button>
           </div>
           
-          <div className="p-6">
+          <div className="p-6 text-slate-900 dark:text-white">
             <h3 className="text-2xl font-bold mb-2">{location.location}</h3>
-            <p className="text-slate-600">{location.timeline}</p>
-            <p className="text-slate-800 mt-2">{location.details}</p>
+            <p className="text-slate-600 dark:text-slate-400">{location.timeline}</p>
+            <p className="text-slate-800 dark:text-slate-300 mt-2">{location.details}</p>
           </div>
         </div>
       </motion.div>
@@ -112,6 +113,7 @@ const CarouselModal = ({ location, onClose }) => {
 const TravelMap = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [selectedLocation, setSelectedLocation] = useState(null);
+  const { theme } = useTheme();
 
   const handlePlayJourney = () => {
     setIsPlaying(false);
@@ -121,7 +123,7 @@ const TravelMap = () => {
   return (
     <motion.section 
       id="travel" 
-      className="py-24 bg-white relative text-slate-900"
+      className="py-24 bg-white dark:bg-slate-900 relative text-slate-900 dark:text-slate-50 transition-colors duration-300"
       initial={{ opacity: 0, y: 80, filter: "blur(10px)" }}
       whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
       transition={{ duration: 0.8, ease: "easeOut" }}
@@ -130,9 +132,9 @@ const TravelMap = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
           <div>
-            <h2 className="text-4xl font-extrabold mb-4 text-slate-900">Global Adventures</h2>
+            <h2 className="text-4xl font-extrabold mb-4 text-slate-900 dark:text-white">Global Adventures</h2>
             <div className="w-24 h-1 bg-brand-500 rounded-full"></div>
-            <p className="mt-6 text-lg text-slate-600 max-w-2xl">
+            <p className="mt-6 text-lg text-slate-600 dark:text-slate-400 max-w-2xl">
               Exploring the world, one city at a time. Hover to see details, click for photos.
             </p>
           </div>
@@ -145,17 +147,21 @@ const TravelMap = () => {
           </button>
         </div>
 
-        <div className="h-[600px] w-full rounded-3xl overflow-hidden shadow-2xl shadow-slate-200 border border-slate-100 relative z-0">
+        <div className="h-[600px] w-full rounded-3xl overflow-hidden shadow-2xl shadow-slate-200 dark:shadow-slate-900/50 border border-slate-100 dark:border-slate-800 relative z-0">
           <MapContainer 
             center={[20, 0]} 
             zoom={2} 
             scrollWheelZoom={false}
             className="w-full h-full"
-            style={{ background: '#f8fafc' }}
+            style={{ background: theme === 'dark' ? '#0f172a' : '#f8fafc' }}
           >
             <TileLayer
+              key={theme} // Force re-render of TileLayer when theme changes
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-              url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
+              url={theme === 'dark' 
+                ? "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
+                : "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
+              }
             />
             
             <JourneyPath isPlaying={isPlaying} />
@@ -170,7 +176,7 @@ const TravelMap = () => {
               >
                 <Popup>
                   <div className="p-1">
-                    <strong className="text-lg block mb-1">{dest.location}</strong>
+                    <strong className="text-lg block mb-1 text-slate-900">{dest.location}</strong>
                     <span className="text-brand-600 font-semibold block text-sm mb-2">{dest.timeline}</span>
                     <p className="text-slate-600 m-0">{dest.details}</p>
                     <button 

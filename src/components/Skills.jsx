@@ -60,7 +60,7 @@ const Skills = () => {
   return (
     <motion.section 
       id="skills" 
-      className="py-24 bg-white text-slate-900 relative"
+      className="py-24 bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-50 relative transition-colors duration-300"
       initial={{ opacity: 0, y: 80, filter: "blur(10px)" }}
       whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
       transition={{ duration: 0.8, ease: "easeOut" }}
@@ -68,9 +68,9 @@ const Skills = () => {
     >
       <div className="max-w-5xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-extrabold mb-4 text-slate-900">Technical Skills</h2>
+          <h2 className="text-4xl font-extrabold mb-4 text-slate-900 dark:text-white">Technical Skills</h2>
           <div className="w-24 h-1 bg-brand-500 mx-auto rounded-full"></div>
-          <p className="mt-6 text-lg text-slate-600 max-w-2xl mx-auto">
+          <p className="mt-6 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
             My toolkit for building robust, scalable, and beautiful applications.
           </p>
         </div>
@@ -78,7 +78,7 @@ const Skills = () => {
         <div className="flex flex-col gap-16">
           {Object.entries(skillsData).map(([category, skills], catIndex) => (
             <div key={category}>
-              <h3 className="text-2xl font-bold mb-8 text-slate-800 text-center uppercase tracking-wider">{category}</h3>
+              <h3 className="text-2xl font-bold mb-8 text-slate-800 dark:text-slate-200 text-center uppercase tracking-wider">{category}</h3>
               <div className="flex flex-wrap justify-center gap-4">
                 {skills.map((skill, index) => (
                   <motion.div
@@ -88,7 +88,7 @@ const Skills = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: index * 0.05 }}
                     whileHover={{ y: -5, scale: 1.05 }}
-                    className="flex items-center gap-3 px-6 py-3 bg-slate-950 text-white rounded-full shadow-lg shadow-slate-900/20 border border-slate-800 hover:border-brand-500 transition-colors"
+                    className="flex items-center gap-3 px-6 py-3 bg-slate-100 dark:bg-slate-950 text-slate-900 dark:text-white rounded-full shadow-lg shadow-slate-200/50 dark:shadow-slate-900/20 border border-slate-200 dark:border-slate-800 hover:border-brand-500 dark:hover:border-brand-500 transition-colors"
                   >
                     <span className="text-xl">{skill.icon}</span>
                     <span className="font-semibold text-sm tracking-wide">{skill.name}</span>

@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaEnvelope, FaArrowDown, FaInstagram } from 'react-icons/fa';
+import { Canvas } from '@react-three/fiber';
+import { Environment, ContactShadows } from '@react-three/drei';
 import profilePic from '../assets/profile.png';
+import CarModel from './canvas/CarModel';
 
 const Hero = () => {
+  const greeting = "Hello World, I am";
   const name = "Diego de Guzman";
 
   return (
@@ -24,21 +28,45 @@ const Hero = () => {
       <div className="absolute top-[20%] right-[-10%] w-96 h-96 bg-purple-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-50 animate-blob animation-delay-2000"></div>
       <div className="absolute bottom-[-20%] left-[20%] w-96 h-96 bg-pink-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-50 animate-blob animation-delay-4000"></div>
 
-      <div className="z-10 max-w-4xl w-full text-center">
+      {/* 3D Car Canvas */}
+      <div className="absolute inset-0 z-[5]">
+        <Canvas camera={{ position: [0, 1.5, 7], fov: 45 }}>
+          <ambientLight intensity={0.5} />
+          <directionalLight position={[5, 10, 5]} intensity={1} castShadow />
+          <Suspense fallback={null}>
+            <Environment preset="city" />
+            <CarModel position={[0, 0.5, 0]} />
+            <ContactShadows position={[0, 0.5, 0]} opacity={0.5} scale={10} blur={2} far={4} />
+          </Suspense>
+        </Canvas>
+      </div>
+
+      <div className="z-10 max-w-4xl w-full text-center mt-32 pointer-events-none">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight mb-8 flex flex-col justify-center items-center gap-4 drop-shadow-2xl text-center leading-tight">
-            <span>Hello World, I am</span>
-            <span className="text-cyan-400 flex justify-center flex-wrap">
-              {name.split('').map((char, index) => (
+            <span className="flex justify-center flex-wrap">
+              {greeting.split('').map((char, index) => (
                 <motion.span
-                  key={index}
+                  key={`greeting-${index}`}
                   initial={{ opacity: 0, display: 'none' }}
                   animate={{ opacity: 1, display: 'inline-block' }}
                   transition={{ duration: 0.05, delay: 0.5 + index * 0.1 }}
+                >
+                  {char === ' ' ? '\u00A0' : char}
+                </motion.span>
+              ))}
+            </span>
+            <span className="text-white drop-shadow-[0_5px_5px_rgba(0,0,0,1)] flex justify-center flex-wrap">
+              {name.split('').map((char, index) => (
+                <motion.span
+                  key={`name-${index}`}
+                  initial={{ opacity: 0, display: 'none' }}
+                  animate={{ opacity: 1, display: 'inline-block' }}
+                  transition={{ duration: 0.05, delay: 0.5 + (greeting.length * 0.1) + index * 0.1 }}
                 >
                   {char === ' ' ? '\u00A0' : char}
                 </motion.span>
@@ -58,7 +86,7 @@ const Hero = () => {
         </motion.div>
 
         <motion.div
-          className="flex flex-col items-center gap-5"
+          className="flex flex-col items-center gap-5 pointer-events-auto"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}

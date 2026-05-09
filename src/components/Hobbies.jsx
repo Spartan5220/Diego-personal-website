@@ -7,7 +7,7 @@ const Hobbies = () => {
   return (
     <motion.section 
       id="hobbies" 
-      className="py-24 bg-slate-50 text-slate-900"
+      className="py-24 bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-50 transition-colors duration-300"
       initial={{ opacity: 0, y: 80, filter: "blur(10px)" }}
       whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
       transition={{ duration: 0.8, ease: "easeOut" }}
@@ -15,7 +15,7 @@ const Hobbies = () => {
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-20">
-          <h2 className="text-4xl font-extrabold mb-4 text-slate-900">Hobbies & Interests</h2>
+          <h2 className="text-4xl font-extrabold mb-4 text-slate-900 dark:text-white">Hobbies & Interests</h2>
           <div className="w-24 h-1 bg-brand-500 mx-auto rounded-full"></div>
         </div>
 
@@ -26,13 +26,13 @@ const Hobbies = () => {
               <div className="p-4 bg-brand-600 text-white rounded-2xl shadow-lg shadow-brand-500/30">
                 <FaDumbbell size={32} />
               </div>
-              <h3 className="text-3xl font-bold">Gym & Bodybuilding</h3>
+              <h3 className="text-3xl font-bold dark:text-white">Gym & Bodybuilding</h3>
             </div>
             
             <div className="grid md:grid-cols-3 gap-8 mb-8">
-              <div className="md:col-span-1 bg-white p-8 rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100 flex flex-col justify-center">
-                <h4 className="text-xl font-bold mb-4 text-brand-600">The Approach</h4>
-                <p className="text-slate-600 leading-relaxed text-lg">
+              <div className="md:col-span-1 bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-xl shadow-slate-200/50 dark:shadow-slate-900/50 border border-slate-100 dark:border-slate-800 flex flex-col justify-center">
+                <h4 className="text-xl font-bold mb-4 text-brand-600 dark:text-brand-400">The Approach</h4>
+                <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-lg">
                   {hobbiesData.gym.nutrition}
                 </p>
               </div>
@@ -42,17 +42,17 @@ const Hobbies = () => {
                   <motion.div 
                     key={index}
                     whileHover={{ y: -5 }}
-                    className={`p-6 rounded-2xl border ${item.workout.includes('Rest') ? 'bg-slate-100 border-slate-200' : 'bg-white border-brand-100 shadow-md hover:shadow-lg hover:shadow-brand-500/10'} flex flex-col`}
+                    className={`p-6 rounded-2xl border ${item.workout.includes('Rest') ? 'bg-slate-100 dark:bg-slate-800 border-slate-200 dark:border-slate-700' : 'bg-white dark:bg-slate-900 border-brand-100 dark:border-slate-800 shadow-md hover:shadow-lg hover:shadow-brand-500/10 dark:shadow-slate-900/50'} flex flex-col`}
                   >
-                    <p className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-2">{item.day}</p>
-                    <p className={`font-semibold text-lg ${item.workout.includes('Rest') ? 'text-slate-500' : 'text-slate-800'}`}>
+                    <p className="text-sm font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-2">{item.day}</p>
+                    <p className={`font-semibold text-lg ${item.workout.includes('Rest') ? 'text-slate-500 dark:text-slate-400' : 'text-slate-800 dark:text-slate-200'}`}>
                       {item.workout}
                     </p>
                     {item.notes && (
-                      <p className="text-xs font-medium text-rose-500 mt-1 mb-2 italic">{item.notes}</p>
+                      <p className="text-xs font-medium text-rose-500 dark:text-rose-400 mt-1 mb-2 italic">{item.notes}</p>
                     )}
                     {item.exercises && item.exercises.length > 0 && (
-                      <ul className="mt-4 space-y-1.5 text-sm text-slate-600 list-disc list-outside ml-4 flex-grow">
+                      <ul className="mt-4 space-y-1.5 text-sm text-slate-600 dark:text-slate-400 list-disc list-outside ml-4 flex-grow">
                         {item.exercises.map((ex, i) => <li key={i}>{ex}</li>)}
                       </ul>
                     )}
@@ -68,7 +68,7 @@ const Hobbies = () => {
               <div className="p-4 bg-orange-500 text-white rounded-2xl shadow-lg shadow-orange-500/30">
                 <FaUtensils size={32} />
               </div>
-              <h3 className="text-3xl font-bold">Food & Culinary</h3>
+              <h3 className="text-3xl font-bold dark:text-white">Food & Culinary</h3>
             </div>
             
             <div className="masonry-grid">
