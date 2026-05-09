@@ -53,17 +53,18 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <p className="text-xl md:text-2xl text-slate-300 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Computer Systems Engineering Senior at ASU (Barrett Honors College) & Software Engineering Intern.
-            Passionate about building beautiful, highly functional frontend experiences.
+            I'm a software developer and a <span className="font-semibold text-brand-400">summa cum laude</span> graduate in Computer Systems Engineering from ASU's Barrett Honors College. When I'm not coding, you can usually find me traveling or at the gym.
           </p>
         </motion.div>
 
         <motion.div
-          className="flex gap-6 justify-center"
+          className="flex flex-col items-center gap-5"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
+          <p className="text-sm md:text-base font-semibold text-slate-400 uppercase tracking-widest">Connect with me</p>
+          <div className="flex gap-6 justify-center">
           <a
             href="https://www.linkedin.com/in/deguzmand/"
             target="_blank"
@@ -94,6 +95,7 @@ const Hero = () => {
           >
             <FaInstagram size={28} className="group-hover:scale-110 transition-transform" />
           </a>
+          </div>
         </motion.div>
       </div>
 

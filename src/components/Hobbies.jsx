@@ -37,17 +37,25 @@ const Hobbies = () => {
                 </p>
               </div>
               
-              <div className="md:col-span-2 grid grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                 {hobbiesData.gym.split.map((item, index) => (
                   <motion.div 
                     key={index}
                     whileHover={{ y: -5 }}
-                    className={`p-6 rounded-2xl border ${item.workout.includes('Rest') ? 'bg-slate-100 border-slate-200' : 'bg-white border-brand-100 shadow-md hover:shadow-lg hover:shadow-brand-500/10'}`}
+                    className={`p-6 rounded-2xl border ${item.workout.includes('Rest') ? 'bg-slate-100 border-slate-200' : 'bg-white border-brand-100 shadow-md hover:shadow-lg hover:shadow-brand-500/10'} flex flex-col`}
                   >
                     <p className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-2">{item.day}</p>
-                    <p className={`font-semibold ${item.workout.includes('Rest') ? 'text-slate-500' : 'text-slate-800'}`}>
+                    <p className={`font-semibold text-lg ${item.workout.includes('Rest') ? 'text-slate-500' : 'text-slate-800'}`}>
                       {item.workout}
                     </p>
+                    {item.notes && (
+                      <p className="text-xs font-medium text-rose-500 mt-1 mb-2 italic">{item.notes}</p>
+                    )}
+                    {item.exercises && item.exercises.length > 0 && (
+                      <ul className="mt-4 space-y-1.5 text-sm text-slate-600 list-disc list-outside ml-4 flex-grow">
+                        {item.exercises.map((ex, i) => <li key={i}>{ex}</li>)}
+                      </ul>
+                    )}
                   </motion.div>
                 ))}
               </div>

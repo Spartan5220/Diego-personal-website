@@ -1,15 +1,85 @@
 {
   "gym": {
     "split": [
-      { "day": "Monday", "workout": "Push (Chest, Shoulders, Triceps)" },
-      { "day": "Tuesday", "workout": "Pull (Back, Biceps, Rear Delts)" },
-      { "day": "Wednesday", "workout": "Legs (Quads, Hamstrings, Calves)" },
-      { "day": "Thursday", "workout": "Push (Chest, Shoulders, Triceps)" },
-      { "day": "Friday", "workout": "Pull (Back, Biceps, Rear Delts)" },
-      { "day": "Saturday", "workout": "Legs (Quads, Hamstrings, Calves)" },
-      { "day": "Sunday", "workout": "Active Recovery / Rest" }
+      {
+        "day": "Monday",
+        "workout": "Chest and Bi",
+        "exercises": [
+          "Upper chest movement (Nautilus incline chest press)",
+          "Lateral raise (cable with cuff)",
+          "Bicep curl (Parmount bicep curl)",
+          "Chest fly (Precor chest fly)",
+          "Hammer curl (rope curl)"
+        ]
+      },
+      {
+        "day": "Tuesday",
+        "workout": "Back Tri",
+        "exercises": [
+          "Lat pulldown",
+          "Upperback row",
+          "Long head tricep extension (bench supported)",
+          "Extreme low row prime machine",
+          "Rear delt fly",
+          "Pullup to failure"
+        ]
+      },
+      {
+        "day": "Wednesday",
+        "workout": "Legs",
+        "notes": "Currently injured with quadricep tendinosis",
+        "exercises": [
+          "Hammer strength leg curl",
+          "Single leg leg raise",
+          "Hip adduction",
+          "Calf raise",
+          "RDL",
+          "Tib raise"
+        ]
+      },
+      {
+        "day": "Thursday",
+        "workout": "Chest and Bi",
+        "exercises": [
+          "Upper chest movement (Nautilus incline chest press)",
+          "Lateral raise (cable with cuff)",
+          "Bicep curl (Parmount bicep curl)",
+          "Chest fly (Precor chest fly)",
+          "Hammer curl (rope curl)"
+        ]
+      },
+      {
+        "day": "Friday",
+        "workout": "Back Tri",
+        "exercises": [
+          "Lat pulldown",
+          "Upperback row",
+          "Long head tricep extension (bench supported)",
+          "Extreme low row prime machine",
+          "Rear delt fly",
+          "Pullup to failure"
+        ]
+      },
+      {
+        "day": "Saturday",
+        "workout": "Legs",
+        "notes": "Currently injured with quadricep tendinosis",
+        "exercises": [
+          "Hammer strength leg curl",
+          "Single leg leg raise",
+          "Hip adduction",
+          "Calf raise",
+          "RDL",
+          "Tib raise"
+        ]
+      },
+      {
+        "day": "Sunday",
+        "workout": "Rest",
+        "exercises": []
+      }
     ],
-    "nutrition": "Focus on high-protein intake (1g per lb of body weight), tracking daily macronutrients and caloric surplus/deficit depending on current bulking or cutting phase. Strict adherence to clean eating with calculated cheat meals."
+    "nutrition": "My training philosophy is straightforward: I do exactly 2 intense working sets for every exercise. I focus entirely on pushing to failure and progressive overload, rather than overcomplicating volume."
   },
   "food": [
     {
